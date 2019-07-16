@@ -25,6 +25,13 @@ exports.write = (req, res) => {
     .catch(onError)
 }
 
+exports.find = (req, res) => {
+    const { username } = req.body
+    console.log(username)
+    Post.findOneByUserName(username)
+    .then(post => res.json(post))
+}
+
 exports.findOne = (req, res) => {
     const { title } = req.body
     Post.findOneByTitle(title)

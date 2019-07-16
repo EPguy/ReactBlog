@@ -30,7 +30,7 @@ Post.statics.findOneByTitle = function(title) {
 }
 
 Post.statics.findOneByUserName = function(username) {
-    return this.findOne({
+    return this.find({
         username
     }).exec()
 }

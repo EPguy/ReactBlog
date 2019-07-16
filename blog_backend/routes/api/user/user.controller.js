@@ -15,6 +15,10 @@ exports.list = (req, res) => {
     )
 }
 
+exports.findUser = (req, res) => {
+    User.findOneByName(req.decoded.name)
+    .then(user => res.json(user))
+}
 exports.assignAdmin = (req, res) => {
     if(!req.decoded.admin) {
         return res.status(403).json({
